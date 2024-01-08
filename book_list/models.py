@@ -10,9 +10,9 @@ class BookList(models.Model):
     publisher = models.ForeignKey('BookStore', models.DO_NOTHING, db_column='PUBLISHER', blank=True, null=True)  # Field name made lowercase.
     price = models.IntegerField(db_column='PRICE', blank=True, null=True)  # Field name made lowercase.
 
-    # class Meta:
-    #     managed = False
-    #     db_table = 'book_list'
+    class Meta:
+        managed = False
+        db_table = 'book_list'
 
 
 class BookStore(models.Model):
@@ -22,6 +22,6 @@ class BookStore(models.Model):
     country = models.CharField(db_column='COUNTRY', max_length=20, blank=True, null=True)  # Field name made lowercase.
     city = models.CharField(db_column='CITY', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
-    # class Meta:
-    #     managed = False
-    #     db_table = 'book_store'
+    class Meta:
+        managed = False
+        db_table = 'book_store'
