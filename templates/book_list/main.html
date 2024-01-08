@@ -1,0 +1,24 @@
+{% extends 'book_list/index.html' %}
+
+{% block content %}
+
+                
+                    <!-- Header -->
+					
+						<h1>도서관리 프로그램</h1>
+						<p>세종 &nbsp;&bull;&nbsp; 빅데이터 &nbsp;&bull;&nbsp; 웹프로젝트</p>
+						<nav>
+							<ul>
+								<li><a href="/select/" class="icon solid fa-book"><span class="label">검색</span></a></li>
+								<li><a href="/insert/" class="icon brands fa-facebook-f"><span class="label">입력</span></a></li>
+								<li><a href="/update/" class="icon brands fa-dribbble"><span class="label">수정</span></a></li>
+								<li><a href="/delete/" class="icon brands fa-github"><span class="label">삭제</span></a></li>
+                                {% if user.is_authenticated %}
+								<li><a href="/logout/" class="icon solid fa-envelope"><span class="label">로그아웃</span></a></li>
+                                {% else %}
+                                <li><a href="{% url 'login' %}" class="icon solid fa-envelope"><span class="label">로그인</span></a></li>
+                                {% endif %}
+							</ul>
+						</nav>
+				
+{% endblock %}
